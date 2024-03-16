@@ -10,7 +10,8 @@ public class OptionBtm : MonoBehaviour
     public string OptionName; //Esta variable asigna el texto en el boton
 
    
-    //Este metodo sirve para actualizar el texto
+    //Este metodo sirve para actualizar el la pregunta en el ScriptableObject
+
     void Start()
     {
         transform.GetChild(0).GetComponent<TMP_Text>().text = OptionName;
@@ -20,7 +21,7 @@ public class OptionBtm : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<TMP_Text>().text = OptionName;
     }
-
+    //Comprueba que se haya seleccionado una opción y llama a la función de SetPlayerAnswer y CheckPlayerState.
     public void SelectOptions()
     {
         //Se asigna la respuesta correcta al ID que se encuentra en el Levelmanager 
