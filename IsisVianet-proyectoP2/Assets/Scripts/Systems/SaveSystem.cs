@@ -7,10 +7,11 @@ using UnityEngine;
 //Es un sistema de guardado
 public class SaveSystem : MonoBehaviour
 {
+    //Creamos una instancia para 
     public static SaveSystem Instance;
 
-    //public Leccion data;
-   // public SubjectContainer subject;
+    public Leccion data;
+    public SubjectContainer subject;
     private void Awake()
     {
         if (Instance != null)
@@ -25,9 +26,13 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        CreateFile("Posicion", ".data");
+        //SaveToJSON("LeccionDummy", data);
 
-        Debug.Log(ReadFile("Posicion", ".data"));
+        ////CreateFile("Posicion", ".data");
+
+        //Debug.Log(ReadFile("Posicion", ".data"));
+
+        subject = LoadFromJSON<SubjectContainer>("LeccionDummy");
        
     }
     public void CreateFile(string _name, string _extension)
@@ -86,5 +91,31 @@ public class SaveSystem : MonoBehaviour
         {
             Debug.LogWarning("ERROR - FileSystem : _data is null, check for param [object _data]");
         }
+    }
+
+    public T LoadFromJSON<T>(string _fileName) where T : new()
+    {
+        T Dato = new T();
+        string path = Application.dataPath + "/Resources/JSONS/" + _fileName + ".json";
+        string JSONData = "";
+        if (File.Exists(path))
+        {
+            JSONData = File.ReadAllText(path);
+            Debug.Log("JSON STRING: " + JSONData);
+        }
+        else 
+        {
+            Debug.LogWarning("ERROR: FileSystem: path doesnt exist, check for local variable [string JSONData];");
+        }
+        //Verifica si la información se cargo
+        if (JSONData.Length != 0)
+        {
+            JsonUtility.FromJsonOverwrite(JSONData, Dato);
+        }
+        else
+        {
+            Debug.LogWarning("ERROR: FileSystem: JSONData is empty, check for local variable [string JSONData];");
+        }
+        return Dato;
     }
 }

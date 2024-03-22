@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 407458046}
   - component: {fileID: 407458045}
   m_Layer: 0
-  m_Name: save
+  m_Name: SaveSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,6 +856,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19242bfc34873f428e0fe6233d1a445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    ID: 0
+    lessons: Este acceso permite acceer a solo atributos heredados
+    options:
+    - void
+    - start
+    - private
+    - protected
+    - public
+    correctAnswer: 3
+  subject:
+    Lesson: 0
+    leccionList: []
 --- !u!4 &407458046
 Transform:
   m_ObjectHideFlags: 0
