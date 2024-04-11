@@ -21,13 +21,13 @@ public class LessonContainer : MonoBehaviour
     public GameObject lessonContainer; 
 
     [Header("Lesson Data")]
-    public ScriptableObject lessonData; //es un objeto que va a servir para almacenar las lecciones (las preguntas)
-
+    public ScriptableObject lesson; //es un objeto que va a servir para almacenar las lecciones (las preguntas)
+    public string LessonName;
     void Start()
     {
         if (lessonContainer != null)
         {
-            onUpdateUI();
+            OnUpdateUI();
         }
         else
         {
@@ -35,7 +35,7 @@ public class LessonContainer : MonoBehaviour
         }
     }
 
-    public void onUpdateUI()
+    public void OnUpdateUI()
     {
         if (StageTitle != null || LessonStage != null)
         {
@@ -45,13 +45,13 @@ public class LessonContainer : MonoBehaviour
         }
         else 
         {
-            Debug.LogWarning("GameObject nulo.");
+            Debug.LogWarning("GameObject Nulo, revisa las variables de tipo TMP_Text");
         }
     }
     //Este metodo activa y desactiva la ventana de lessonContainer
-    public void EnableWindow()
+    public void EnableWindows()
     {
-        onUpdateUI();
+        OnUpdateUI();
 
         if (lessonContainer.activeSelf)
         {
@@ -59,10 +59,10 @@ public class LessonContainer : MonoBehaviour
             lessonContainer.SetActive(false);
         }
         else
-        { 
-            //Activa el objeto si esta desactivado
+        {
+            // Activa el objeto si está desactivado
             lessonContainer.SetActive(true);
-
+            MainScript.instance.SetSelectedLesson(LessonName);
         }
     }
 

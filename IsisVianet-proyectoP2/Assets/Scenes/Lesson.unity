@@ -1075,7 +1075,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a77b938dfc5aad48a33d6c5b640aad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lesson: {fileID: 11400000, guid: 2c4b0d68d4bd4c545923259a4ca94a4c, type: 2}
+  subject:
+    Lesson: 0
+    leccionList: []
   QuestionTxt: {fileID: 2092252310}
   livesTXt: {fileID: 2002105984}
   Options:
@@ -3438,8 +3440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45, y: -172.16005}
-  m_SizeDelta: {x: 784.08, y: 191.39}
+  m_AnchoredPosition: {x: 20.81, y: -198.72}
+  m_SizeDelta: {x: 915.7, y: 244.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2092252310
 MonoBehaviour:

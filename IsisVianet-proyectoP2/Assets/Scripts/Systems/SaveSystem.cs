@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 //El script más importante.
 //Es un sistema de guardado
@@ -22,6 +23,8 @@ public class SaveSystem : MonoBehaviour
         {
             Instance = this;
         }
+
+        subject = LoadFromJSON<SubjectContainer>(PlayerPrefs.GetString("SelectedLesson"));
     }
 
     private void Start()
@@ -32,7 +35,7 @@ public class SaveSystem : MonoBehaviour
 
         //Debug.Log(ReadFile("Posicion", ".data"));
 
-        subject = LoadFromJSON<SubjectContainer>("LeccionDummy");
+        //subject = LoadFromJSON<SubjectContainer>("LeccionDummy");
        
     }
     public void CreateFile(string _name, string _extension)
@@ -110,7 +113,7 @@ public class SaveSystem : MonoBehaviour
         //Verifica si la información se cargo
         if (JSONData.Length != 0)
         {
-            JsonUtility.FromJsonOverwrite(JSONData, Dato);
+           JsonUtility.FromJsonOverwrite(JSONData, Dato);
         }
         else
         {

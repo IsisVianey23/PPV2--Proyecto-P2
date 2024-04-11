@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
 
     [Header("Level Data")]
-    public Subject Lesson;
+    public SubjectContainer subject;
 
     //Esta variables almacenan 
     [Header("User Interface")]
@@ -33,6 +33,9 @@ public class LevelManager : MonoBehaviour
     [Header("Current Lesson")]
     public Leccion currentLesson;//Establece la lección actual
 
+    //PATRON SINGLETO ES UN PATRON DE DISEÑO, ENCARGADO DE CREAR UNA INSTANCIA DE LA CLASE 
+    //PARA SER REFERENCIA DA EN OTRA CLASE SIN LA NECESIDAD DE DECLARAR LAS VARIABLES
+
     private void Awake()
     {
         if (Instance != null)
@@ -48,9 +51,10 @@ public class LevelManager : MonoBehaviour
     //Este método configura la cantidad de preguntas y las inicializa.
     void Start()
     {
+        subject = SaveSystem.Instance.subject;
         //Establecemos la cantidad de preguntas en la leccion para 
         //seleccionarlas y actualizarlas
-        questionAmount = Lesson.leccionList.Count;
+        questionAmount = subject.leccionList.Count;
         //se llama a la funcion para comprobar si se ha
         //seleccionado una pocion
         LoadQuestion();
@@ -63,7 +67,7 @@ public class LevelManager : MonoBehaviour
         if (currentQuestion < questionAmount)
         {
             //Establecemos la leccíon actual
-            currentLesson = Lesson.leccionList[currentQuestion];
+            currentLesson = subject.leccionList[currentQuestion];
             //Establecemos la pregunta
             question = currentLesson.lessons;
             //Establecemos la respuesta correcta
