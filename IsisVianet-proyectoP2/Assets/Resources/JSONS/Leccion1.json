@@ -27,7 +27,7 @@
        },
        {
          "ID": 5,
-         "lessons": "¿Cuál es el término que se utiliza en Unity para referirse a un conjunto de objetos que comparten características similares?",
+         "lessons": "Es un conjunto de objetos que comparten características similares",
          "options": ["Grupo", "Colección", "Familia", "Prefab", "Array"],
          "correctAnswer": 3
        }

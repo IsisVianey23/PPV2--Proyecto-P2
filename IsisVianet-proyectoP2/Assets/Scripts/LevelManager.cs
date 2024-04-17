@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -46,6 +47,11 @@ public class LevelManager : MonoBehaviour
         { 
             Instance = this;
         }
+    }
+   //Este metodo sirve para regresar al menu principal.
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Main");
     }
 
     //Este método configura la cantidad de preguntas y las inicializa.

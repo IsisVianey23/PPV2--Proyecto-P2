@@ -18,7 +18,7 @@ public class LessonContainer : MonoBehaviour
     public TMP_Text LessonStage; //Almacena el texto de la leccion
 
     [Header("External GameObject Configuration")]
-    public GameObject lessonContainer; 
+    public GameObject lessonContainer;
 
     [Header("Lesson Data")]
     public ScriptableObject lesson; //es un objeto que va a servir para almacenar las lecciones (las preguntas)
@@ -43,13 +43,13 @@ public class LessonContainer : MonoBehaviour
             LessonStage.text = "Leccion " + CurrentLession + "de" + TotalLessions;
 
         }
-        else 
+        else
         {
             Debug.LogWarning("GameObject Nulo, revisa las variables de tipo TMP_Text");
         }
     }
     //Este metodo activa y desactiva la ventana de lessonContainer
-    public void EnableWindows()
+    public void EnableWindow()
     {
         OnUpdateUI();
 
@@ -65,5 +65,4 @@ public class LessonContainer : MonoBehaviour
             MainScript.instance.SetSelectedLesson(LessonName);
         }
     }
-
 }
