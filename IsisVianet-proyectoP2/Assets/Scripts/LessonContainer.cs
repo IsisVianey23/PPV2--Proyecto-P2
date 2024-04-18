@@ -25,26 +25,31 @@ public class LessonContainer : MonoBehaviour
     public string LessonName;
     void Start()
     {
+        //verifica si no es nula
         if (lessonContainer != null)
         {
+            //llama al metodo para actualizar la interfaz de la leccion
             OnUpdateUI();
         }
         else
         {
+            //si es nula manda este mensaje 
             Debug.LogWarning("Revisa las variables TMP_Text");
         }
     }
 
+    //Actualiza los textos de las lecciones y su numero
     public void OnUpdateUI()
     {
-        if (StageTitle != null || LessonStage != null)
+        if (StageTitle != null || LessonStage != null) //verifica si no son nulas
         {
-            StageTitle.text = "Leccion " + Lection;
-            LessonStage.text = "Leccion " + CurrentLession + "de" + TotalLessions;
+            StageTitle.text = "Leccion " + Lection; //Actualiza el texto
+            LessonStage.text = "Leccion " + CurrentLession + "de" + TotalLessions; //actualiza el numero de la leccion
 
         }
         else
         {
+            //Si las variables son nulas emite este mensaje.
             Debug.LogWarning("GameObject Nulo, revisa las variables de tipo TMP_Text");
         }
     }
