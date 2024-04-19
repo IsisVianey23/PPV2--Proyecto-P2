@@ -21,5 +21,6 @@ Este proyecto esta basado en la aplicacion de Duolingo. Así que:
 
 Para poder instalar el ejecutable desde github puedes clonar el repositorio o darle click al botón verde que dice "<>Code" y sellecionar la opción "DownloadZip", una vez descomprimido puedes buscar la carpeta "Game" y abrir el ejecutable.
 
-![Kirby-panfleto](https://github.com/IsisVianey23/PPV2--Proyecto-P2/assets/157182718/0d7e339f-5144-4e9d-9024-6aafe16de780)
+![Kirby-panfletouwu](https://github.com/IsisVianey23/PPV2--Proyecto-P2/assets/157182718/22e6c92d-d4c0-440d-8465-965315769dad)
+
 
